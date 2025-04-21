@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E7AC3F26C34379BB173EA0 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34AA85F82D84484AB4093213 /* Rubik-Regular.ttf */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		681408C32DB11C1900A94C16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 681408C22DB11C1900A94C16 /* GoogleService-Info.plist */; };
 		681408C52DB11EB100A94C16 /* Pods_tasksApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681408C42DB11EB100A94C16 /* Pods_tasksApp.framework */; };
@@ -20,6 +21,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tasksApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = tasksApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = tasksApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		34AA85F82D84484AB4093213 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Regular.ttf"; path = "../src/assets/fonts/Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		681408C22DB11C1900A94C16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		681408C42DB11EB100A94C16 /* Pods_tasksApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_tasksApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = tasksApp/AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B4344A3B74B84FAB9611D76B /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -92,6 +95,15 @@
 				13B07F961A680F5B00A75B9A /* tasksApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B4344A3B74B84FAB9611D76B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34AA85F82D84484AB4093213 /* Rubik-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -172,6 +184,7 @@
 				681408C32DB11C1900A94C16 /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				EA27BB0254ECCBF954986EB9 /* PrivacyInfo.xcprivacy in Resources */,
+				02E7AC3F26C34379BB173EA0 /* Rubik-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +442,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -509,7 +525,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
