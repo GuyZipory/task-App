@@ -1,3 +1,26 @@
 {
-  "welcome": "ברוך הבא"
+  "welcome": "ברוך הבא",
+  "register": "הרשמה",
+  "login": "התחברות",
+  "createNewAccount": "צור משתמש חדש",
+  "password": "סיסמה",
+  "email": "אימייל",
+  "alreadyHaveAnAccount": "כבר יש לך חשבון?",
+  "loginFailed": "ההתחברות נכשלה",
+  "invalidEmailOrPassword": "אימייל או סיסמה לא נכונים",
+  "registrationSuccessful": "ההרשמה הצליחה",
+  "youCanNowLogInWithYourCredentials": "עכשיו תוכל להתחבר עם הפרטים שלך",
+  "emailAlreadyInUse": "האימייל כבר בשימוש",
+  "pleaseEnterDifferentEmail": "אנא הזן אימייל אחר",
+  "registerFailed": "ההרשמה נכשלה!",
+  "pleaseTryAgainLater": "אנא נסה שוב מאוחר יותר",
+  "welcomeBack": "ברוך שובך",
+  "addTask": "הוסף משימה",
+  "enterTaskName": "הכנס שם משימה",
+  "taskName": "שם המשימה",
+  "delete": "מחק",
+  "complete": "סיים",
+  "settings": "הגדרות",
+  "apiCall": "קריאה ל-API",
+  "logOut": "התנתק"
 }

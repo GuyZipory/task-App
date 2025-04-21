@@ -1,3 +1,26 @@
 {
-  "welcome": "Welcome"
+  "welcome": "Welcome",
+  "register": "Register",
+  "login": "Login",
+  "createNewAccount": "Create new account",
+  "password": "Password",
+  "email": "Email",
+  "alreadyHaveAnAccount": "Already have an account",
+  "loginFailed": "Login Failed",
+  "invalidEmailOrPassword": "Invalid email or password",
+  "registrationSuccessful": "Registration Successful",
+  "youCanNowLogInWithYourCredentials": "You can now log in with your credentials",
+  "emailAlreadyInUse": "Email already in-use!",
+  "pleaseEnterDifferentEmail": "Please enter different email",
+  "registerFailed": "Register failed!",
+  "pleaseTryAgainLater": "Please try again later",
+  "welcomeBack": "Welcome back",
+  "addTask": "Add Task",
+  "enterTaskName": "Enter task name",
+  "taskName": "Task Name",
+  "delete": "Delete",
+  "complete": "Complete",
+  "settings": "Settings",
+  "apiCall": "API Call",
+  "logOut": "Log Out"
 }

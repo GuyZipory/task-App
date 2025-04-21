@@ -1,10 +1,9 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from '@/screens/loginScreen';
-import SplashScreen from '@/screens/splashScreen';
 
 export type AuthStackParamList = {
-  Splash: undefined;
+  // Splash: undefined;
   Login: undefined;
 };
 
@@ -15,7 +14,7 @@ export default function AuthStack() {
     <Stack.Navigator
       initialRouteName="Login"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Splash" component={SplashScreen} />
+      {/* <Stack.Screen name="Splash" component={SplashScreen} /> */}
       <Stack.Screen name="Login" component={LoginScreen} />
     </Stack.Navigator>
   );

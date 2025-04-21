@@ -4,7 +4,7 @@ import en from './en.json';
 import he from './he.json';
 
 i18n.use(initReactI18next).init({
-  lng: 'en',
+  lng: 'he',
   fallbackLng: 'en',
   resources: {
     en: {translation: en},

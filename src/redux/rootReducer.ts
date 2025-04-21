@@ -1,21 +1,8 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {combineReducers} from '@reduxjs/toolkit';
+import authSlice from '@/redux/authReducer';
 
-const initialState = {
-  user: null,
-};
-
-const authSlice = createSlice({
-  name: 'auth',
-  initialState,
-  reducers: {
-    setUser: (state, action) => {
-      state.user = action.payload;
-    },
-    logout: state => {
-      state.user = null;
-    },
-  },
+const rootReducer = combineReducers({
+  auth: authSlice.reducer,
 });
 
-export const {setUser, logout} = authSlice.actions;
-export default authSlice.reducer;
+export default rootReducer;
