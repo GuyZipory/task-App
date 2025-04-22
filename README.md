@@ -10,6 +10,16 @@ It features modern theming, form handling, i18n, Firebase auth, and uses Redux +
 > **Make sure your environment is set up:**  
 > Follow the official [React Native environment setup guide](https://reactnative.dev/docs/environment-setup).
 
+### ⚠️ Dependency Note
+
+If you encounter installation issues with `npm install`, run the following command instead to avoid peer dependency conflicts:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+This ensures all dependencies install correctly, especially with UI libraries like RNE and React Native modules that may have version mismatches.
+
 ### ✅ Run the App
 
 #### iOS (Preferred for development)
@@ -114,6 +124,7 @@ src/
 
 - This app was developed primarily using **Xcode**, where Metro runs automatically.
 - Metro does not need to be started separately when using Xcode for iOS builds.
+- Dependency installation may require the `--legacy-peer-deps` flag due to known peer conflict issues.
 
 ---
 

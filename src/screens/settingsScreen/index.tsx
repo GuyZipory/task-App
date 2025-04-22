@@ -57,20 +57,20 @@ export default function SettingsScreen() {
     return (
       <View style={styles.langButtonContainer}>
         {languageOptionsForSelectArray.map(item => (
-          <>
-            <TouchableOpacity
-              key={item.value}
-              style={styles.langButton}
-              onPress={() => handleLanguageChange(item.value)}>
-              {item.value === selectedLanguage && selectedLanguage === 'he' && (
-                <Icon name="check" size={24} color={theme.black} />
-              )}
-              <Text style={styles.langNameText}>{t(item.label)}</Text>
-              {item.value === selectedLanguage && selectedLanguage === 'en' && (
-                <Icon name="check" size={24} color={theme.black} />
-              )}
-            </TouchableOpacity>
-          </>
+          <TouchableOpacity
+            key={item.value}
+            style={styles.langButton}
+            onPress={() => handleLanguageChange(item.value)}>
+            {item.value === selectedLanguage && selectedLanguage === 'he' && (
+              <Icon name="check" size={24} color={theme.black} />
+            )}
+            <Text style={styles.langNameText} key={item.label}>
+              {t(item.label)}
+            </Text>
+            {item.value === selectedLanguage && selectedLanguage === 'en' && (
+              <Icon name="check" size={24} color={theme.black} />
+            )}
+          </TouchableOpacity>
         ))}
       </View>
     );
