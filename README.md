@@ -1,97 +1,126 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 TasksApp
 
-# Getting Started
+TasksApp is a React Native application developed mainly using **Xcode** with seamless Metro bundler integration.  
+It features modern theming, form handling, i18n, Firebase auth, and uses Redux + React Query for state and server sync.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Getting Started
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+> **Make sure your environment is set up:**  
+> Follow the official [React Native environment setup guide](https://reactnative.dev/docs/environment-setup).
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### ✅ Run the App
 
-```sh
-# Using npm
-npm start
+#### iOS (Preferred for development)
 
-# OR using Yarn
-yarn start
-```
+- Run via Xcode for the best experience (Metro starts automatically).
+- Or use terminal:
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+#### Android
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+npm run android
+```
 
-## Step 3: Modify your app
+#### Start Metro Manually (optional)
 
-Now that you have successfully run the app, let's make changes!
+```bash
+npm start
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+---
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 📦 Dependencies
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### 🧱 Core Libraries
 
-## Congratulations! :tada:
+- **react** `19.0.0`
+- **react-native** `0.79.1`
 
-You've successfully run and modified your React Native App. :partying_face:
+### 🧭 Navigation
 
-### Now what?
+- `@react-navigation/native`
+- `@react-navigation/native-stack`
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### 🗃 State Management
 
-# Troubleshooting
+- `@reduxjs/toolkit`
+- `react-redux`
+- `redux-persist`
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### 🎨 UI / Theming
 
-# Learn More
+- `react-native-paper`
+- `@rneui/base`, `@rneui/themed`
+- `react-native-elements`
 
-To learn more about React Native, take a look at the following resources:
+### 🧠 Form + Validation
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- `react-hook-form`
+- `zod`
+
+### 🌍 i18n
+
+- `react-i18next`
+- `i18next`, `i18next-http-backend`, `i18next-browser-languagedetector`
+
+### 🔥 Firebase
+
+- `@react-native-firebase/app`
+- `@react-native-firebase/auth`
+
+### 🔄 Data Fetching
+
+- `@tanstack/react-query`
+- `axios`
+
+### 💾 Storage
+
+- `@react-native-async-storage/async-storage`
+
+---
+
+## 📝 Additional Features
+
+- 💡 **Dark mode** support using Redux-controlled theme context.
+- 🌐 **i18n** language switching.
+- 🔒 **Authentication** powered by Firebase.
+- 🎨 Modern UI components from Paper, RNE, and Elements.
+- 💬 Toast messaging with `react-native-toast-message`.
+
+---
+
+## 🛠 File Structure
+
+```
+src/
+├── api/
+├── components/
+├── screens/
+├── store/
+├── theme/
+├── i18n/
+├── navigation/
+```
+
+---
+
+## 🧪 Development Notes
+
+- This app was developed primarily using **Xcode**, where Metro runs automatically.
+- Metro does not need to be started separately when using Xcode for iOS builds.
+
+---
+
+## 📚 Learn More
+
+- [React Native Docs](https://reactnative.dev/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Navigation](https://reactnavigation.org/)
+- [React Query](https://tanstack.com/query/latest)
+- [Firebase](https://firebase.google.com/)
