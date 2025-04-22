@@ -1,7 +1,6 @@
 export type User = {
   email: string;
   uid: string;
-  defaultLanguage: string;
 };
 
 export type Task = {
@@ -9,4 +8,11 @@ export type Task = {
   name: string;
   isComplete: boolean;
   uid: string;
+};
+
+export type LanguageOptions = 'he' | 'en';
+
+export type LanguageOptionsSelectObject = {
+  value: LanguageOptions;
+  label: string;
 };

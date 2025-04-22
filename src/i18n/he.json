@@ -22,5 +22,11 @@
   "complete": "סיים",
   "settings": "הגדרות",
   "apiCall": "קריאה ל-API",
-  "logOut": "התנתק"
+  "logOut": "התנתק",
+  "language": "שפה",
+  "darkMode": "מצב כהה",
+  "english": "אנגלית",
+  "hebrew": "עברית",
+  "chooseLanguage": "בחר שפה",
+  "searchTodos": "חפש משימות"
 }

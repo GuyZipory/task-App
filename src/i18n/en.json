@@ -22,5 +22,11 @@
   "complete": "Complete",
   "settings": "Settings",
   "apiCall": "API Call",
-  "logOut": "Log Out"
+  "logOut": "Log Out",
+  "language": "Language",
+  "darkMode": "Dark Mode",
+  "english": "English",
+  "hebrew": "Hebrew",
+  "chooseLanguage": "Choose Language",
+  "searchTodos": "Search todos"
 }

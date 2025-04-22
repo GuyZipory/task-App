@@ -7,21 +7,19 @@ import {Text, TextInput} from 'react-native';
 import '@/i18n';
 import {persistor, store} from '@/redux/store';
 import RootNavigator from '@/navigation';
+import {ThemeProvider} from '@/theme';
 
 const queryClient = new QueryClient();
 
 export default function App() {
-  (Text as any).defaultProps = (Text as any).defaultProps || {};
-  (Text as any).defaultProps.style = {fontFamily: 'Rubik'};
-  (TextInput as any).defaultProps = (TextInput as any).defaultProps || {};
-  (TextInput as any).defaultProps.style = {fontFamily: 'Rubik'};
-
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <QueryClientProvider client={queryClient}>
           <NavigationContainer>
-            <RootNavigator />
+            <ThemeProvider>
+              <RootNavigator />
+            </ThemeProvider>
           </NavigationContainer>
         </QueryClientProvider>
       </PersistGate>

@@ -6,19 +6,27 @@ import {RootState} from '@/redux/store';
 import {SafeAreaView} from 'react-native';
 import Toast from 'react-native-toast-message';
 import {useTranslation} from 'react-i18next';
+import {useTheme} from '@/theme';
 
 export default function RootNavigator() {
   const user = useSelector((state: RootState) => state.auth.user);
+  const language = useSelector(
+    (state: RootState) => state.appSettings.language,
+  );
   const {i18n} = useTranslation();
   const currentLang = i18n.language;
+
   useEffect(() => {
-    if (user?.uid && user?.defaultLanguage !== currentLang) {
-      i18n.changeLanguage(user.defaultLanguage);
+    if (user?.uid && language !== currentLang) {
+      i18n.changeLanguage(language);
     }
-  }, [user?.defaultLanguage, currentLang, i18n]);
+  }, [language, currentLang, i18n]);
+
+  const theme = useTheme();
 
   return (
-    <SafeAreaView style={{flex: 1, marginBottom: 30}}>
+    <SafeAreaView
+      style={{flex: 1, paddingBottom: 30, backgroundColor: theme.background}}>
       {user?.uid ? <AppStack /> : <AuthStack />}
       <Toast position="bottom" />
     </SafeAreaView>

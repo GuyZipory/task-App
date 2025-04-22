@@ -1,12 +1,13 @@
-import {styles} from '@/components/bottomMenu/style';
+import {getStyles} from '@/components/bottomMenu/style';
 import {AppStackParamList} from '@/navigation/stacks/appStack';
+import {useTheme} from '@/theme';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {View, Modal, TouchableOpacity} from 'react-native';
+import {View, Modal, TouchableOpacity, TextInput} from 'react-native';
 import {Button} from 'react-native-paper';
-import {IconButton, Text, TextInput} from 'react-native-paper';
+import {IconButton, Text} from 'react-native-paper';
 
 type Props = {
   addTask: (taskName: string) => void;
@@ -18,7 +19,8 @@ const BottomMenu = ({addTask}: Props) => {
   const navigation =
     useNavigation<NativeStackNavigationProp<AppStackParamList>>();
   const {t} = useTranslation();
-
+  const theme = useTheme();
+  const styles = getStyles(theme);
   const toggleModal = () => {
     setModalVisible(!modalVisible);
     setTaskName('');
@@ -30,6 +32,7 @@ const BottomMenu = ({addTask}: Props) => {
         <IconButton
           icon="web"
           size={24}
+          iconColor={theme.text}
           onPress={() => {
             navigation.navigate('APICallScreen');
           }}
@@ -37,9 +40,9 @@ const BottomMenu = ({addTask}: Props) => {
         <TouchableOpacity style={styles.fabContainer} onPress={toggleModal}>
           <IconButton
             icon="plus"
-            iconColor="white"
             size={30}
             style={styles.fab}
+            iconColor={'white'}
           />
         </TouchableOpacity>
         <IconButton
@@ -48,6 +51,7 @@ const BottomMenu = ({addTask}: Props) => {
           onPress={() => {
             navigation.navigate('Settings');
           }}
+          iconColor={theme.text}
         />
       </View>
 
@@ -55,23 +59,26 @@ const BottomMenu = ({addTask}: Props) => {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Text variant="titleMedium">{t('addTask')}</Text>
+              <Text variant="titleMedium" style={styles.headerTitle}>
+                {t('addTask')}
+              </Text>
               <IconButton
                 icon="close"
                 size={24}
                 onPress={toggleModal}
                 style={styles.closeButton}
+                iconColor={theme.text}
               />
             </View>
             <TextInput
-              label={t('taskName')}
-              mode="outlined"
               style={styles.input}
-              value={taskName}
               onChangeText={(text: React.SetStateAction<string>) =>
                 setTaskName(text)
               }
-              placeholder={t('enterTaskName')}
+              value={taskName}
+              placeholder={t('taskName')}
+              autoCapitalize="none"
+              placeholderTextColor={theme.text}
             />
             <Button
               style={styles.button}

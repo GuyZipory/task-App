@@ -7,6 +7,7 @@ import Toast from 'react-native-toast-message';
 import {useDispatch} from 'react-redux';
 import {setUser} from '@/redux/authReducer';
 import {useTranslation} from 'react-i18next';
+import i18n from '@/i18n';
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(6, 'Password must be at least 6 characters'),
@@ -27,7 +28,12 @@ export const useLoginPage = () => {
         data.email,
         data.password,
       );
-      dispatch(setUser({email: user.user.email ?? '', uid: user.user.uid}));
+      dispatch(
+        setUser({
+          email: user.user.email ?? '',
+          uid: user.user.uid,
+        }),
+      );
     } catch (err: any) {
       Toast.show({
         type: 'error',

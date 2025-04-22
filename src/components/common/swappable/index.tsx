@@ -1,4 +1,5 @@
-import {styles} from '@/components/common/swappable/style';
+import {getStyles} from '@/components/common/swappable/style';
+import {useTheme} from '@/theme';
 import {Task} from '@/types';
 import HighlightText from '@/utils/highLighter';
 import {Icon, ListItem, Button as RNButton} from '@rneui/themed';
@@ -20,7 +21,8 @@ export const Swappable = ({
   searchText = '',
 }: Props) => {
   const {t} = useTranslation();
-
+  const theme = useTheme();
+  const styles = getStyles(theme);
   return (
     <ListItem.Swipeable
       containerStyle={styles.swippleContainer}
@@ -59,7 +61,7 @@ export const Swappable = ({
         <ListItem.Title key={task.id} style={styles.taskTitle}>
           <HighlightText text={task.name} highlight={searchText} />
         </ListItem.Title>
-        {task.isComplete && <Icon name="check" color={'green'} />}
+        {task.isComplete && <Icon name="check" color={theme.checkColor} />}
       </ListItem.Content>
     </ListItem.Swipeable>
   );

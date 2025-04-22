@@ -1,4 +1,4 @@
-import {ScrollView, Text, TextInput, View} from 'react-native';
+import {ScrollView, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {ActivityIndicator} from 'react-native-paper';
@@ -8,11 +8,14 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {AppStackParamList} from '@/navigation/stacks/appStack';
 import {useTodos} from '@/api/hooks/useTodos';
 import {useDebounce} from '@/utils/useDebounce';
-import {styles} from '@/screens/apiCallScreen/style';
+import {getStyles} from '@/screens/apiCallScreen/style';
 import {Swappable} from '@/components/common/swappable';
+import {useTheme} from '@/theme';
 
 export default function APICallScreen() {
   const [search, setSearch] = useState('');
+  const theme = useTheme();
+  const styles = getStyles(theme);
   const {t} = useTranslation();
   const navigation =
     useNavigation<NativeStackNavigationProp<AppStackParamList>>();
@@ -21,12 +24,13 @@ export default function APICallScreen() {
 
   return (
     <PageWrapper pageTitle={t('apiCall')} goBack={() => navigation.goBack()}>
-      <View style={{flex: 1, alignItems: 'center'}}>
+      <View style={styles.rootContainer}>
         <TextInput
-          placeholder="Search todos"
+          placeholder={t('searchTodos')}
           value={search}
           onChangeText={setSearch}
           style={styles.searchBar}
+          placeholderTextColor={theme.text}
         />
         <ScrollView
           style={styles.taskScrollView}

@@ -1,11 +1,12 @@
 import {View, Text, ScrollView} from 'react-native';
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {RootState} from '@/redux/store';
 import {Task} from '@/types';
-import {styles} from '@/screens/homeScreen/style';
+import {getStyles} from '@/screens/homeScreen/style';
 import {Swappable} from '@/components/common/swappable';
+import {useTheme} from '@/theme';
 
 type Props = {
   tasks: Task[];
@@ -20,7 +21,8 @@ export default function HomeScreen({
 }: Props) {
   const {t} = useTranslation();
   const user = useSelector((state: RootState) => state.auth.user);
-
+  const theme = useTheme();
+  const styles = getStyles(theme);
   return (
     <View style={styles.rootContainer}>
       <Text style={styles.welcomeText}>

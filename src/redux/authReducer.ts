@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {User} from '@/types';
+import {LanguageOptions, User} from '@/types';
 
 type AuthState = {
   user: User;
@@ -9,7 +9,6 @@ const initialState: AuthState = {
   user: {
     email: '',
     uid: '',
-    defaultLanguage: 'en',
   },
 };
 

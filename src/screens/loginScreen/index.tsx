@@ -1,13 +1,17 @@
 import React from 'react';
 import {View, Text, TextInput} from 'react-native';
 import {useLoginPage} from '@/api/hooks/useLoginPage';
-import {styles} from '@/screens/loginScreen/style';
 import {Button} from 'react-native-paper';
 import {useTranslation} from 'react-i18next';
 import {Controller} from 'react-hook-form';
+import {getStyles} from '@/screens/loginScreen/style';
+import {useTheme} from '@/theme';
 
 export default function LoginScreen() {
   const {t} = useTranslation();
+
+  const theme = useTheme();
+  const styles = getStyles(theme);
   const {
     onSubmit,
     registerUser,
@@ -36,6 +40,7 @@ export default function LoginScreen() {
             value={value}
             placeholder={t('email')}
             autoCapitalize="none"
+            placeholderTextColor={theme.text}
           />
         )}
       />
@@ -52,6 +57,7 @@ export default function LoginScreen() {
             value={value}
             secureTextEntry
             placeholder={t('password')}
+            placeholderTextColor={theme.text}
           />
         )}
       />
@@ -64,7 +70,9 @@ export default function LoginScreen() {
           onPress={() => {
             setIsRegister(!isRegister);
           }}>
-          {isRegister ? t('alreadyHaveAnAccount') : t('createNewAccount')}
+          <Text style={styles.createAccountButtonText}>
+            {isRegister ? t('alreadyHaveAnAccount') : t('createNewAccount')}
+          </Text>
         </Button>
       </View>
       <Button
