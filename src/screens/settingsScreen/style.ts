@@ -35,23 +35,6 @@ export const getStyles = (theme: typeof lightTheme) =>
       justifyContent: 'space-between',
       alignItems: 'center',
     },
-    langButton: {
-      height: 50,
-      flexDirection: 'row',
-      gap: 10,
-      justifyContent: 'center',
-      backgroundColor: theme.langButton,
-      alignItems: 'center',
-      borderRadius: 10,
-      shadowColor: '#000',
-      shadowOffset: {width: 0, height: 2},
-      shadowOpacity: 0.3,
-      shadowRadius: 4,
-    },
-    langButtonContainer: {
-      gap: 10,
-      marginBlockEnd: 20,
-    },
     settingContainer: {
       height: '70%',
       borderWidth: 1,
@@ -86,10 +69,6 @@ export const getStyles = (theme: typeof lightTheme) =>
     },
     headerTitle: {
       fontSize: 18,
-      color: theme.text,
-    },
-    langNameText: {
-      fontSize: 16,
       color: theme.text,
     },
   });

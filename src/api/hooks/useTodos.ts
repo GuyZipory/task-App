@@ -1,19 +1,8 @@
+import {Task, Todo} from '@/types';
 import {useQuery} from '@tanstack/react-query';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 
-export interface Todo {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
-export type Task = {
-  id: string;
-  name: string;
-  isComplete: boolean;
-  uid: string;
-};
 const fetchTodos = async (): Promise<Todo[]> => {
   const {data} = await axios.get<Todo[]>(
     'https://jsonplaceholder.typicode.com/todos',

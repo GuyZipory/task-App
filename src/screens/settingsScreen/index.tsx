@@ -9,72 +9,28 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {AppStackParamList} from '@/navigation/stacks/appStack';
 import {logout} from '@/redux/authReducer';
-import {LanguageOptions} from '@/types';
-import {languageOptionsForSelectArray} from '@/i18n';
 import {Icon} from '@rneui/themed';
 import {useTheme} from '@/theme';
 import {getStyles} from '@/screens/settingsScreen/style';
 import {setDarkMode, setLanguage} from '@/redux/appSettingsReducer';
+import {useSettings} from '@/api/hooks/useSettings';
+import {LangTouchableOptions} from '@/components/langTouchableOptions';
 
 export default function SettingsScreen() {
-  const [modalVisible, setModalVisible] = useState(false);
   const {t} = useTranslation();
   const theme = useTheme();
   const styles = getStyles(theme);
   const navigation =
     useNavigation<NativeStackNavigationProp<AppStackParamList>>();
-  const language = useSelector(
-    (state: RootState) => state.appSettings.language,
-  );
-  const darkMode = useSelector(
-    (state: RootState) => state.appSettings.darkMode,
-  );
   const dispatch = useDispatch();
-
-  const toggleModal = () => {
-    setModalVisible(!modalVisible);
-  };
-
-  const handleLanguageChange = (lang: LanguageOptions) => {
-    dispatch(setLanguage(lang));
-    toggleModal();
-  };
-
-  const currentLanguage = useMemo(() => {
-    const currentLang = languageOptionsForSelectArray.find(
-      item => item.value === language,
-    );
-    return currentLang;
-  }, [language]);
-
-  type renderLangTouchableOptions = {
-    selectedLanguage: string;
-  };
-
-  const RenderLangTouchableOptions = ({
-    selectedLanguage,
-  }: renderLangTouchableOptions) => {
-    return (
-      <View style={styles.langButtonContainer}>
-        {languageOptionsForSelectArray.map(item => (
-          <TouchableOpacity
-            key={item.value}
-            style={styles.langButton}
-            onPress={() => handleLanguageChange(item.value)}>
-            {item.value === selectedLanguage && selectedLanguage === 'he' && (
-              <Icon name="check" size={24} color={theme.black} />
-            )}
-            <Text style={styles.langNameText} key={item.label}>
-              {t(item.label)}
-            </Text>
-            {item.value === selectedLanguage && selectedLanguage === 'en' && (
-              <Icon name="check" size={24} color={theme.black} />
-            )}
-          </TouchableOpacity>
-        ))}
-      </View>
-    );
-  };
+  const {
+    darkMode,
+    handleLanguageChange,
+    modalVisible,
+    currentLanguage,
+    toggleModal,
+    language,
+  } = useSettings();
 
   return (
     <>
@@ -130,7 +86,10 @@ export default function SettingsScreen() {
                 iconColor={theme.black}
               />
             </View>
-            <RenderLangTouchableOptions selectedLanguage={language} />
+            <LangTouchableOptions
+              selectedLanguage={language}
+              handleLanguageChange={handleLanguageChange}
+            />
           </View>
         </View>
       </Modal>
