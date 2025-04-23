@@ -1,8 +1,7 @@
 import {Modal, Text, TouchableOpacity, View} from 'react-native';
-import React, {useMemo, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React from 'react';
+import {useDispatch} from 'react-redux';
 import {useTranslation} from 'react-i18next';
-import {RootState} from '@/redux/store';
 import {Button, IconButton, Switch} from 'react-native-paper';
 import {PageWrapper} from '@/components/common/pageWrapper';
 import {useNavigation} from '@react-navigation/native';
@@ -12,7 +11,7 @@ import {logout} from '@/redux/authReducer';
 import {Icon} from '@rneui/themed';
 import {useTheme} from '@/theme';
 import {getStyles} from '@/screens/settingsScreen/style';
-import {setDarkMode, setLanguage} from '@/redux/appSettingsReducer';
+import {setDarkMode} from '@/redux/appSettingsReducer';
 import {useSettings} from '@/api/hooks/useSettings';
 import {LangTouchableOptions} from '@/components/langTouchableOptions';
 
