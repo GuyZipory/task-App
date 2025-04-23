@@ -28,5 +28,9 @@
   "english": "English",
   "hebrew": "Hebrew",
   "chooseLanguage": "Choose Language",
-  "searchTodos": "Search todos"
+  "searchTodos": "Search todos",
+  "tasksSummary": "Tasks Summary",
+  "totalTasks": "Total tasks",
+  "completedTasks": "Completed tasks",
+  "pendingTasks": "Pending tasks"
 }

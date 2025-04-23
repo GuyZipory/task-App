@@ -7,10 +7,12 @@ export const getStyles = (theme: typeof lightTheme) =>
       backgroundColor: theme.background,
       flex: 1,
       paddingBlockStart: 20,
+      alignItems: 'center',
     },
 
     taskScrollView: {
       paddingHorizontal: 10,
+      width: '95%',
     },
     tasksScrollViewContent: {
       paddingBlockEnd: 100,

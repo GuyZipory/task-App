@@ -28,5 +28,9 @@
   "english": "אנגלית",
   "hebrew": "עברית",
   "chooseLanguage": "בחר שפה",
-  "searchTodos": "חפש משימות"
+  "searchTodos": "חפש משימות",
+  "tasksSummary": "סיכום משימות",
+  "totalTasks": "סך הכל משימות",
+  "completedTasks": "משימות שהושלמו",
+  "pendingTasks": "משימות ממתינות"
 }

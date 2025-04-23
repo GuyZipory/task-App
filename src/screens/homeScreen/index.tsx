@@ -7,6 +7,7 @@ import {Task} from '@/types';
 import {getStyles} from '@/screens/homeScreen/style';
 import {Swappable} from '@/components/common/swappable';
 import {useTheme} from '@/theme';
+import {TasksSummary} from '@/components/tasksSummary';
 
 type Props = {
   tasks: Task[];
@@ -28,6 +29,7 @@ export default function HomeScreen({
       <Text style={styles.welcomeText}>
         {`${t('welcomeBack')}, ${user?.email}`}
       </Text>
+      <TasksSummary tasks={tasks} />
       <ScrollView
         style={styles.taskScrollView}
         contentContainerStyle={styles.tasksScrollViewContent}>
