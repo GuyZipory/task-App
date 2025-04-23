@@ -1,5 +1,7 @@
 # 📱 TasksApp
 
+This project was developed as a coding exercise for a technical interview.
+
 TasksApp is a React Native application developed mainly using **Xcode** with seamless Metro bundler integration.  
 It features modern theming, form handling, i18n, Firebase auth, and uses Redux + React Query for state and server sync.
 
