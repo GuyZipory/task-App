@@ -32,5 +32,6 @@
   "tasksSummary": "סיכום משימות",
   "totalTasks": "סך הכל משימות",
   "completedTasks": "משימות שהושלמו",
-  "pendingTasks": "משימות ממתינות"
+  "pendingTasks": "משימות ממתינות",
+  "reset": "איפוס"
 }

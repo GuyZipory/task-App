@@ -32,5 +32,6 @@
   "tasksSummary": "Tasks Summary",
   "totalTasks": "Total tasks",
   "completedTasks": "Completed tasks",
-  "pendingTasks": "Pending tasks"
+  "pendingTasks": "Pending tasks",
+  "reset": "Reset"
 }

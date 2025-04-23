@@ -47,12 +47,15 @@ export const Swappable = ({
           ? null
           : reset => (
               <RNButton
-                title={t('complete')}
+                title={task.isComplete ? t('reset') : t('complete')}
                 onPress={() => {
                   toggleTaskComplete?.(task.id);
                   reset();
                 }}
-                icon={{name: 'check', color: 'white'}}
+                icon={{
+                  name: task.isComplete ? 'cancel' : 'check',
+                  color: 'white',
+                }}
                 buttonStyle={styles.completeButton}
               />
             )
